@@ -46,6 +46,7 @@ Haskell:
 - https://github.com/adarqui/ln-lib
 - https://github.com/adarqui/ln-interop
 - https://github.com/adarqui/ln-validate
+- https://github.com/adarqui/ln-sanitize
 - https://github.com/adarqui/ln-api
 - https://github.com/adarqui/ln-api-runner
 - https://github.com/adarqui/ln-smf-migration
@@ -54,6 +55,7 @@ Haskell:
 - https://github.com/adarqui/haskell-api-helpers
 - https://github.com/adarqui/haskell-ebyam
 - https://github.com/adarqui/haskell-rehtie
+- https://github.com/adarqui/haskell-ifte
 
 Purescript:
 - https://github.com/adarqui/purescript-ln
