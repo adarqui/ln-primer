@@ -59,6 +59,7 @@ Purescript:
 - https://github.com/adarqui/purescript-ln
 - https://github.com/adarqui/purescript-api-helpers
 - https://github.com/adarqui/purescript-date-helpers
+- https://github.com/adarqui/purescript-bbcode-parser
 - https://github.com/adarqui/purescript-ebyam
 - https://github.com/adarqui/purescript-rehtie
 
