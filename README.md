@@ -94,6 +94,9 @@ There's quite a bit of code generated, and it will only continue to grow. I'm no
 see any other way to achieve this small level of haskell <-> purescript interop. I have recently made slight optimizations by
 removing unnecessary instances on both the Purescript & Haskell sides. However, it barely makes a dent.
 
+Finally, I do think the code-gen tools will pay off. Eventually I may want to produce equivalent records & api routines for
+other languages (ocaml, go, js).
+
 ## outro
 
 pc.
