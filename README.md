@@ -75,3 +75,27 @@ Haskell:
 
 Purescript:
 - https://github.com/adarqui/ln-ui
+
+## code generation
+
+A rather large amount of code is generated via haskell-interop-prime and ln-interop. This is because I need to communicate seamlessly
+between haskell and purescript. Here are the automatically generated source files:
+
+Haskell:
+- https://github.com/adarqui/ln-types/blob/master/src/LN/T/Internal/JSON.hs
+
+Purescript:
+- https://github.com/adarqui/purescript-ln/blob/master/src/LN/T/Internal/Types.purs
+- https://github.com/adarqui/purescript-ln/blob/master/src/LN/T/Internal/Convert.purs
+- https://github.com/adarqui/purescript-ln/blob/master/src/LN/Api/Internal.purs
+- https://github.com/adarqui/purescript-ln/blob/master/src/LN/Api/Internal/String.purs
+
+There's quite a bit of code generated, and it will only continue to grow. I'm not necessarily "proud" of this, but, I don't really
+see any other way to achieve this small level of haskell <-> purescript interop. I have recently made slight optimizations by
+removing unnecessary instances on both the Purescript & Haskell sides. However, it barely makes a dent.
+
+## outro
+
+pc.
+
+-- adarqui
