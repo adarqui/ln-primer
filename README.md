@@ -43,6 +43,7 @@ All of the reposotiroes below are involved in this project.  Eventually I might 
 
 Haskell:
 - https://github.com/adarqui/ln-types
+- https://github.com/adarqui/haskell-ln-types (generated, replaces ln-types)
 - https://github.com/adarqui/ln-lib
 - https://github.com/adarqui/ln-interop
 - https://github.com/adarqui/ln-validate
@@ -58,7 +59,9 @@ Haskell:
 - https://github.com/adarqui/haskell-ifte
 
 Purescript:
-- https://github.com/adarqui/purescript-ln
+- https://github.com/adarqui/purescript-ln (deprecated)
+- https://github.com/adarqui/purescript-ln-types
+- https://github.com/adarqui/purescript-api
 - https://github.com/adarqui/purescript-api-helpers
 - https://github.com/adarqui/purescript-date-helpers
 - https://github.com/adarqui/purescript-bbcode-parser
