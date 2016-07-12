@@ -48,6 +48,7 @@ Haskell:
 - https://github.com/adarqui/ln-interop
 - https://github.com/adarqui/ln-validate
 - https://github.com/adarqui/ln-sanitize
+- https://github.com/adarqui/ln-yesod
 - https://github.com/adarqui/ln-api
 - https://github.com/adarqui/ln-api-runner
 - https://github.com/adarqui/ln-smf-migration
@@ -58,6 +59,18 @@ Haskell:
 - https://github.com/adarqui/haskell-rehtie
 - https://github.com/adarqui/haskell-ifte
 
+
+## private repositories
+
+These repos are private until I get this project launched.
+
+Haskell:
+- https://github.com/adarqui/ln-fix
+
+## deprecated repositories
+
+My project has grown too large for the purescript compiler. Unfortunately, compile times are too slow. Thus, i'm now migrating everything to 100% haskell.
+
 Purescript:
 - https://github.com/adarqui/purescript-ln (deprecated)
 - https://github.com/adarqui/purescript-ln-types
@@ -67,17 +80,6 @@ Purescript:
 - https://github.com/adarqui/purescript-bbcode-parser
 - https://github.com/adarqui/purescript-ebyam
 - https://github.com/adarqui/purescript-rehtie
-
-## private repositories
-
-These repos are private until I get this project launched.
-
-Haskell:
-- https://github.com/adarqui/ln-fix
-- https://github.com/adarqui/ln-yesod
-
-Purescript:
-- https://github.com/adarqui/ln-ui
 
 ## code generation
 
