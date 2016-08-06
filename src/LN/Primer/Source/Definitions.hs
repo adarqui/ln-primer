@@ -31,6 +31,7 @@ module LN.Primer.Source.Definitions (
   , source_ln_shell
   , source_haskell_web_bootstrap
   , source_haskell_ebyam
+  , source_haskell_rehtie
 ) where
 
 
@@ -66,6 +67,7 @@ sources =
   , source_ln_shell
   , source_haskell_web_bootstrap
   , source_haskell_ebyam
+  , source_haskell_rehtie
   ]
 
 
@@ -371,6 +373,18 @@ source_haskell_web_bootstrap = (defaultSource "haskell-web-bootstrap") {
 source_haskell_ebyam :: Source
 source_haskell_ebyam = (defaultSource "haskell-ebyam") {
     sourceDescription = [ "Flipped maybe for code readability" ]
+  , sourceStatus      = Complete
+  , sourceType        = FullStack
+  , sourceSpecificity = Reuseable
+  }
+
+
+
+-- | https://github.com/adarqui/haskell-rehtie
+--
+source_haskell_rehtie :: Source
+source_haskell_rehtie = (defaultSource "haskell-rehtie") {
+    sourceDescription = [ "Flipped either for code readability" ]
   , sourceStatus      = Complete
   , sourceType        = FullStack
   , sourceSpecificity = Reuseable
