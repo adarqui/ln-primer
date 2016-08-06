@@ -9,10 +9,11 @@ module LN.Primer.Source.Definitions (
   , source_prefix
   , source_maintainers
   , defaultSource
-  , source_ln_yesod
-  , source_ln_ui_purescript
+  , source_ln_types
   , source_haskell_ln_types
   , source_purescript_ln_types
+  , source_ln_yesod
+  , source_ln_ui_purescript
 ) where
 
 
@@ -26,10 +27,11 @@ import           LN.Primer.Source
 
 sources :: [Source]
 sources =
-  [ source_ln_yesod
-  , source_ln_ui_purescript
+  [ source_ln_types
   , source_haskell_ln_types
   , source_purescript_ln_types
+  , source_ln_yesod
+  , source_ln_ui_purescript
   ]
 
 
@@ -61,28 +63,15 @@ defaultSource package = Source {
 
 
 
--- | https://github.com/adarqui/ln-yesod
+-- | https://github.com/adarqui/ln-types
 --
-source_ln_yesod :: Source
-source_ln_yesod = (defaultSource "ln-yesod") {
-    sourceDescription = [ "HTTPS backend using Yesod"
-                        , "Serves up the API & web socket."
-                        , "Persist data to PostgreSQL via Persistent."
+source_ln_types :: Source
+source_ln_types = (defaultSource "ln-types") {
+    sourceDescription = [ "Base library where all of the core types are defined."
+                        , "ln-interop uses ln-types to generate corresponding types in other languages."
+                        , "Containers types that are serialized over the API to bridge the frontend & backend."
                         ]
   , sourceLanguages   = [LangHaskell]
-  }
-
-
-
--- | https://github.com/adarqui/ln-ui-purescript
---
-source_ln_ui_purescript :: Source
-source_ln_ui_purescript = (defaultSource "ln-ui-purescript") {
-    sourceDescription = [ "Initial frontend for LN."
-                        , "A purescript-halogen app."
-                        ]
-  , sourceLanguages   = [LangPurescript]
-  , sourceStatus      = Deprecated (Just "Purescript 0.9.x compiler is too slow.")
   }
 
 
@@ -105,4 +94,30 @@ source_purescript_ln_types = (defaultSource "purescript-ln-types") {
     sourceDescription = [ "ln-types for purescript" ]
   , sourceLanguages   = [LangPurescript]
   , sourceGeneration  = Generated
+  }
+
+
+
+-- | https://github.com/adarqui/ln-yesod
+--
+source_ln_yesod :: Source
+source_ln_yesod = (defaultSource "ln-yesod") {
+    sourceDescription = [ "HTTPS backend using Yesod"
+                        , "Serves up the API & web socket."
+                        , "Persist data to PostgreSQL via Persistent."
+                        ]
+  , sourceLanguages   = [LangHaskell]
+  }
+
+
+
+-- | https://github.com/adarqui/ln-ui-purescript
+--
+source_ln_ui_purescript :: Source
+source_ln_ui_purescript = (defaultSource "ln-ui-purescript") {
+    sourceDescription = [ "Initial frontend for LN."
+                        , "A purescript-halogen app."
+                        ]
+  , sourceLanguages   = [LangPurescript]
+  , sourceStatus      = Deprecated (Just "Purescript 0.9.x compiler is too slow.")
   }
