@@ -20,6 +20,7 @@ library
                        LN.Primer.Source.Definitions
   build-depends:       base >= 4.7 && < 5
                      , text
+  ghc-options:         -Wall
   default-language:    Haskell2010
 
 executable ln-primer-exe

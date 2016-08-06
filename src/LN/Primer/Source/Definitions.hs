@@ -10,6 +10,7 @@ module LN.Primer.Source.Definitions (
   , source_maintainers
   , defaultSource
   , source_ln_yesod
+  , source_ln_ui_purescript
 ) where
 
 
@@ -24,6 +25,7 @@ import           LN.Primer.Source
 sources :: [Source]
 sources =
   [ source_ln_yesod
+  , source_ln_ui_purescript
   ]
 
 
@@ -63,7 +65,7 @@ source_ln_yesod = (defaultSource "ln-yesod") {
                         , "Serves up the API & web socket."
                         , "Persist data to PostgreSQL via Persistent."
                         ]
-  , sourceLanguages = [LangHaskell]
+  , sourceLanguages   = [LangHaskell]
 }
 
 
@@ -72,8 +74,9 @@ source_ln_yesod = (defaultSource "ln-yesod") {
 --
 source_ln_ui_purescript :: Source
 source_ln_ui_purescript = (defaultSource "ln-ui-purescript") {
-    sourceDescription = [ "Initial frontend for LN."
-                        , "A purescript-halogen app."
-                        ]
-  , sourceLanguages = [LangPurescript]
+    sourceDescription             = [ "Initial frontend for LN."
+                                    , "A purescript-halogen app."
+                                    ]
+    , sourceLanguages             = [LangPurescript]
+    , sourceStatus                = Deprecated (Just "Purescript 0.9.x compiler is too slow.")
 }

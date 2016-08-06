@@ -8,6 +8,7 @@
 module LN.Primer.Source (
     Source (..)
   , SourceStatus (..)
+  , DeprecationReason
   , SourceVisibility (..)
   , SourceLanguage (..)
   , SourceType (..)
@@ -30,8 +31,10 @@ import           GHC.Generics  (Generic)
 --
 data SourceStatus
   = Active
-  | Deprecated
+  | Deprecated (Maybe DeprecationReason)
   deriving (Eq, Ord, Show, Generic, Typeable)
+
+type DeprecationReason = Text
 
 
 
