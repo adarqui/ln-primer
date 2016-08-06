@@ -137,8 +137,8 @@ source_ln_backend_core = (defaultSource "ln-backend-core") {
                         , "The core is intended to be re-useable by any backend, allowing us to reduce code in since most of it will be shared."
                         ]
   , sourceLanguages   = [LangHaskell]
-  , sourceType        = Backend
   , sourceStatus      = Todo
+  , sourceType        = Backend
   }
 
 
@@ -152,8 +152,8 @@ source_ln_backend_yesod = (defaultSource "ln-backend-yesod") {
                         , "Serves the API and websocket."
                         ]
   , sourceLanguages   = [LangHaskell]
-  , sourceType        = Backend
   , sourceStatus      = Todo
+  , sourceType        = Backend
   }
 
 
@@ -167,8 +167,8 @@ source_ln_backend_servant = (defaultSource "ln-backend-servant") {
                         , "Serves the API and websocket."
                         ]
   , sourceLanguages   = [LangHaskell]
-  , sourceType        = Backend
   , sourceStatus      = Todo
+  , sourceType        = Backend
   }
 
 
@@ -182,8 +182,8 @@ source_ln_backend_scotty = (defaultSource "ln-backend-scotty") {
                         , "Serves the API and websocket."
                         ]
   , sourceLanguages   = [LangHaskell]
-  , sourceType        = Backend
   , sourceStatus      = Todo
+  , sourceType        = Backend
   }
 
 
@@ -221,6 +221,18 @@ source_ln_ui_reactflux = (defaultSource "ln-ui-reactflux") {
                         , "React.Flux uses react & flux under the hood."
                         ]
   , sourceLanguages   = [LangHaskell]
+  , sourceType        = Frontend
+  }
+
+
+
+-- | https://github.com/adarqui/ln-ui-shell
+--
+source_ln_ui_shell :: Source
+source_ln_ui_shell = (defaultSource "ln-ui-shell") {
+    sourceDescription = [ "A shell frontend using ln-ui-core." ]
+  , sourceLanguages   = [LangHaskell]
+  , sourceStatus      = Todo
   , sourceType        = Frontend
   }
 
