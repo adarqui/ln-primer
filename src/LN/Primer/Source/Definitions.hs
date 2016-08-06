@@ -15,6 +15,7 @@ module LN.Primer.Source.Definitions (
   , source_ln_yesod
   , source_ln_ui_core
   , source_ln_ui_ghcjs
+  , source_ln_ui_reactflux
   , source_ln_ui_purescript
 ) where
 
@@ -35,6 +36,7 @@ sources =
   , source_ln_yesod
   , source_ln_ui_core
   , source_ln_ui_ghcjs
+  , source_ln_ui_reactflux
   , source_ln_ui_purescript
   ]
 
@@ -141,7 +143,13 @@ source_ln_ui_ghcjs = (defaultSource "ln-ui-ghcjs") {
 
 -- | https://github.com/adarqui/ln-ui-reactflux
 --
-
+source_ln_ui_reactflux :: Source
+source_ln_ui_reactflux = (defaultSource "ln-ui-reactflux") {
+    sourceDescription = [ "A react-flux frontend using ln-ui-core."
+                        , "React.Flux uses react & flux under the hood."
+                        ]
+  , sourceLanguages   = [LangHaskell]
+  }
 
 
 
