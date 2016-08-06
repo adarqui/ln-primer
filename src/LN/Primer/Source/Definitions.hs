@@ -13,6 +13,10 @@ module LN.Primer.Source.Definitions (
   , source_haskell_ln_types
   , source_purescript_ln_types
   , source_ln_yesod
+  , source_ln_backend_core
+  , source_ln_backend_yesod
+  , source_ln_backend_servant
+  , source_ln_backend_scotty
   , source_ln_ui_core
   , source_ln_ui_ghcjs
   , source_ln_ui_reactflux
@@ -34,6 +38,10 @@ sources =
   , source_haskell_ln_types
   , source_purescript_ln_types
   , source_ln_yesod
+  , source_ln_backend_core
+  , source_ln_backend_yesod
+  , source_ln_backend_servant
+  , source_ln_backend_scotty
   , source_ln_ui_core
   , source_ln_ui_ghcjs
   , source_ln_ui_reactflux
@@ -60,7 +68,6 @@ defaultSource package = Source {
     , sourceURL         = source_prefix <> "/" <> package
     , sourceLanguages   = []
     , sourceStatus      = Active
-    , sourceState       = WorkInProgress
     , sourceVisibility  = Public
     , sourceType        = Backend
     , sourceGeneration  = Manual
@@ -109,11 +116,72 @@ source_purescript_ln_types = (defaultSource "purescript-ln-types") {
 --
 source_ln_yesod :: Source
 source_ln_yesod = (defaultSource "ln-yesod") {
-    sourceDescription = [ "HTTPS backend using Yesod"
-                        , "Serves up the API & web socket."
+    sourceDescription = [ "HTTPS backend using Yesod."
+                        , "Serves up the API & websocket."
                         , "Persist data to PostgreSQL via Persistent."
                         ]
   , sourceLanguages   = [LangHaskell]
+  , sourceType        = Backend
+  }
+
+
+
+-- | https://github.com/adarqui/ln-backend-core
+-- TODO
+--
+source_ln_backend_core :: Source
+source_ln_backend_core = (defaultSource "ln-backend-core") {
+    sourceDescription = [ "Re-useable core backend."
+                        , "The core is intended to be re-useable by any backend, allowing us to reduce code in since most of it will be shared."
+                        ]
+  , sourceLanguages   = [LangHaskell]
+  , sourceType        = Backend
+  , sourceStatus      = Todo
+  }
+
+
+
+-- | https://github.com/adarqui/ln-backend-yesod
+-- TODO
+--
+source_ln_backend_yesod :: Source
+source_ln_backend_yesod = (defaultSource "ln-backend-yesod") {
+    sourceDescription = [ "HTTPS backend using Yesod & ln-backend-core."
+                        , "Serves the API and websocket."
+                        ]
+  , sourceLanguages   = [LangHaskell]
+  , sourceType        = Backend
+  , sourceStatus      = Todo
+  }
+
+
+
+-- | https://github.com/adarqui/ln-backend-servant
+-- TODO
+--
+source_ln_backend_servant :: Source
+source_ln_backend_servant = (defaultSource "ln-backend-servant") {
+    sourceDescription = [ "HTTPS backend using Servant & ln-backend-core."
+                        , "Serves the API and websocket."
+                        ]
+  , sourceLanguages   = [LangHaskell]
+  , sourceType        = Backend
+  , sourceStatus      = Todo
+  }
+
+
+
+-- | https://github.com/adarqui/ln-backend-scotty
+-- TODO
+--
+source_ln_backend_scotty :: Source
+source_ln_backend_scotty = (defaultSource "ln-backend-scotty") {
+    sourceDescription = [ "HTTPS backend using Scotty & ln-backend-core."
+                        , "Serves the API and websocket."
+                        ]
+  , sourceLanguages   = [LangHaskell]
+  , sourceType        = Backend
+  , sourceStatus      = Todo
   }
 
 
@@ -123,10 +191,11 @@ source_ln_yesod = (defaultSource "ln-yesod") {
 source_ln_ui_core :: Source
 source_ln_ui_core = (defaultSource "ln-ui-core") {
     sourceDescription = [ "Base system for all haskell frontends."
-                        , "The core is supposed to be re-useable by any frontend, allowing us to reduce code in since most of it will be shared."
+                        , "The core is intended to be re-useable by any frontend, allowing us to reduce code in since most of it will be shared."
                         ]
 
   , sourceLanguages   = [LangHaskell]
+  , sourceType        = FullStack
   }
 
 
@@ -137,6 +206,7 @@ source_ln_ui_ghcjs :: Source
 source_ln_ui_ghcjs = (defaultSource "ln-ui-ghcjs") {
     sourceDescription = [ "This repo simply compiles all of the ghcjs frontends (ie; reactflux) into javascript libraries." ]
   , sourceLanguages   = [LangHaskell]
+  , sourceType        = Frontend
   }
 
 
@@ -149,6 +219,7 @@ source_ln_ui_reactflux = (defaultSource "ln-ui-reactflux") {
                         , "React.Flux uses react & flux under the hood."
                         ]
   , sourceLanguages   = [LangHaskell]
+  , sourceType        = Frontend
   }
 
 
@@ -162,4 +233,5 @@ source_ln_ui_purescript = (defaultSource "ln-ui-purescript") {
                         ]
   , sourceLanguages   = [LangPurescript]
   , sourceStatus      = Deprecated (Just "Purescript 0.9.x compiler is too slow.")
+  , sourceType        = Frontend
   }

@@ -8,7 +8,6 @@
 module LN.Primer.Source (
     Source (..)
   , SourceStatus (..)
-  , SourceState (..)
   , DeprecationReason
   , SourceVisibility (..)
   , SourceLanguage (..)
@@ -28,24 +27,16 @@ import           GHC.Generics  (Generic)
 
 
 
--- | Is this source still actively apart of the LN project, or has it been deprecated?
+-- | Is this source still actively apart of the LN project, completely finalized, a future project, or has it been deprecated?
 --
 data SourceStatus
   = Active
+  | Complete
+  | Todo
   | Deprecated (Maybe DeprecationReason)
   deriving (Eq, Ord, Show, Generic, Typeable)
 
 type DeprecationReason = Text
-
-
-
--- | Is this source a work in progress, completely finalized, or a future project?
---
-data SourceState
-  = WorkInProgress
-  | Complete
-  | Todo
-  deriving (Eq, Ord, Show, Generic, Typeable)
 
 
 
@@ -117,7 +108,6 @@ data Source = Source {
   sourceURL         :: Text,
   sourceLanguages   :: [SourceLanguage],
   sourceStatus      :: SourceStatus,
-  sourceState       :: SourceState,
   sourceVisibility  :: SourceVisibility,
   sourceType        :: SourceType,
   sourceGeneration  :: SourceGeneration,
