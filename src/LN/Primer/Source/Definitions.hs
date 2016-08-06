@@ -33,6 +33,7 @@ module LN.Primer.Source.Definitions (
   , source_haskell_ebyam
   , source_haskell_rehtie
   , source_haskell_ifte
+  , source_haskell_either_helpers
 ) where
 
 
@@ -70,6 +71,7 @@ sources =
   , source_haskell_ebyam
   , source_haskell_rehtie
   , source_haskell_ifte
+  , source_haskell_either_helpers
   ]
 
 
@@ -399,6 +401,18 @@ source_haskell_rehtie = (defaultSource "haskell-rehtie") {
 source_haskell_ifte :: Source
 source_haskell_ifte = (defaultSource "haskell-ifte") {
     sourceDescription = [ "if/then/else helpers for code readability (debatable)" ]
+  , sourceStatus      = Complete
+  , sourceType        = FullStack
+  , sourceSpecificity = Reuseable
+  }
+
+
+
+-- | https://github.com/adarqui/haskell-either-helpers
+--
+source_haskell_either_helpers :: Source
+source_haskell_either_helpers = (defaultSource "haskell-either-helpers") {
+    sourceDescription = [ "EitherT helpers for code readability/efficiency" ]
   , sourceStatus      = Complete
   , sourceType        = FullStack
   , sourceSpecificity = Reuseable
