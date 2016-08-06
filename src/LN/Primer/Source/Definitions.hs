@@ -22,7 +22,9 @@ import           LN.Primer.Source
 
 
 sources :: [Source]
-sources = []
+sources =
+  [ source_ln_yesod
+  ]
 
 
 
@@ -40,7 +42,7 @@ source_maintainers =
 defaultSource :: Text -> Source
 defaultSource package = Source {
       sourceName        = package
-    , sourceDescription = package
+    , sourceDescription = [package]
     , sourceURL         = source_prefix <> "/" <> package
     , sourceLanguages   = []
     , sourceStatus      = Active
@@ -54,4 +56,10 @@ defaultSource package = Source {
 
 
 source_ln_yesod :: Source
-source_ln_yesod = defaultSource "ln-yesod"
+source_ln_yesod = (defaultSource "ln-yesod") {
+    sourceDescription = [ "HTTPS backend using Yesod"
+                        , "Serves up the API & web socket."
+                        , "Persist data to PostgreSQL via Persistent."
+                        ]
+  , sourceLanguages = [LangHaskell]
+}
