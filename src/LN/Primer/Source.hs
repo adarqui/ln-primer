@@ -76,7 +76,7 @@ data SourceType
 --
 data SourceGeneration
   = Manual
-  | Automated
+  | Generated
   deriving (Eq, Ord, Show, Generic, Typeable)
 
 

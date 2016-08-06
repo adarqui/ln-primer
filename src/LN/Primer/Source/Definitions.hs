@@ -11,6 +11,8 @@ module LN.Primer.Source.Definitions (
   , defaultSource
   , source_ln_yesod
   , source_ln_ui_purescript
+  , source_haskell_ln_types
+  , source_purescript_ln_types
 ) where
 
 
@@ -26,6 +28,8 @@ sources :: [Source]
 sources =
   [ source_ln_yesod
   , source_ln_ui_purescript
+  , source_haskell_ln_types
+  , source_purescript_ln_types
   ]
 
 
@@ -66,7 +70,7 @@ source_ln_yesod = (defaultSource "ln-yesod") {
                         , "Persist data to PostgreSQL via Persistent."
                         ]
   , sourceLanguages   = [LangHaskell]
-}
+  }
 
 
 
@@ -74,9 +78,31 @@ source_ln_yesod = (defaultSource "ln-yesod") {
 --
 source_ln_ui_purescript :: Source
 source_ln_ui_purescript = (defaultSource "ln-ui-purescript") {
-    sourceDescription             = [ "Initial frontend for LN."
-                                    , "A purescript-halogen app."
-                                    ]
-    , sourceLanguages             = [LangPurescript]
-    , sourceStatus                = Deprecated (Just "Purescript 0.9.x compiler is too slow.")
-}
+    sourceDescription = [ "Initial frontend for LN."
+                        , "A purescript-halogen app."
+                        ]
+  , sourceLanguages   = [LangPurescript]
+  , sourceStatus      = Deprecated (Just "Purescript 0.9.x compiler is too slow.")
+  }
+
+
+
+-- | https://github.com/adarqui/haskell-ln-types
+--
+source_haskell_ln_types :: Source
+source_haskell_ln_types = (defaultSource "haskell-ln-types") {
+    sourceDescription = [ "ln-types for haskell" ]
+  , sourceLanguages   = [LangHaskell]
+  , sourceGeneration  = Generated
+  }
+
+
+
+-- | https://github.com/adarqui/purescript-ln-types
+--
+source_purescript_ln_types :: Source
+source_purescript_ln_types = (defaultSource "purescript-ln-types") {
+    sourceDescription = [ "ln-types for purescript" ]
+  , sourceLanguages   = [LangPurescript]
+  , sourceGeneration  = Generated
+  }
