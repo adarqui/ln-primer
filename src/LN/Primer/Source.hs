@@ -56,7 +56,9 @@ data SourceLanguage
   = LangHaskell
   | LangPurescript
   | LangOcaml
+  | LangIdris
   | LangRust
+  | LangJavascript
   | LangGo
   | LangC
   deriving (Eq, Ord, Show, Generic, Typeable)

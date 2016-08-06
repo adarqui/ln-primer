@@ -12,6 +12,12 @@ module LN.Primer.Source.Definitions (
   , source_ln_types
   , source_haskell_ln_types
   , source_purescript_ln_types
+  , source_ocaml_ln_types
+  , source_idris_ln_types
+  , source_rust_ln_types
+  , source_javascript_ln_types
+  , source_go_ln_types
+  , source_c_ln_types
   , source_ln_yesod
   , source_ln_backend_core
   , source_ln_backend_yesod
@@ -21,7 +27,9 @@ module LN.Primer.Source.Definitions (
   , source_ln_ui_ghcjs
   , source_ln_ui_reactflux
   , source_ln_ui_purescript
+  , source_ln_ui_shell
   , source_ln_shell
+  , source_haskell_web_bootstrap
 ) where
 
 
@@ -38,6 +46,12 @@ sources =
   [ source_ln_types
   , source_haskell_ln_types
   , source_purescript_ln_types
+  , source_ocaml_ln_types
+  , source_idris_ln_types
+  , source_rust_ln_types
+  , source_javascript_ln_types
+  , source_go_ln_types
+  , source_c_ln_types
   , source_ln_yesod
   , source_ln_backend_core
   , source_ln_backend_yesod
@@ -47,7 +61,9 @@ sources =
   , source_ln_ui_ghcjs
   , source_ln_ui_reactflux
   , source_ln_ui_purescript
+  , source_ln_ui_shell
   , source_ln_shell
+  , source_haskell_web_bootstrap
   ]
 
 
@@ -110,6 +126,78 @@ source_purescript_ln_types = (defaultSource "purescript-ln-types") {
     sourceDescription = [ "ln-types for purescript" ]
   , sourceLanguages   = [LangPurescript]
   , sourceGeneration  = Generated
+  }
+
+
+
+-- | https://github.com/adarqui/ocaml-ln-types
+--
+source_ocaml_ln_types :: Source
+source_ocaml_ln_types = (defaultSource "ocaml-ln-types") {
+    sourceDescription = [ "ln-types for ocaml" ]
+  , sourceLanguages   = [LangOcaml]
+  , sourceGeneration  = Generated
+  , sourceStatus      = Todo
+  }
+
+
+
+-- | https://github.com/adarqui/idris-ln-types
+--
+source_idris_ln_types :: Source
+source_idris_ln_types = (defaultSource "idris-ln-types") {
+    sourceDescription = [ "ln-types for idris" ]
+  , sourceLanguages   = [LangIdris]
+  , sourceGeneration  = Generated
+  , sourceStatus      = Todo
+  }
+
+
+
+-- | https://github.com/adarqui/rust-ln-types
+--
+source_rust_ln_types :: Source
+source_rust_ln_types = (defaultSource "rust-ln-types") {
+    sourceDescription = [ "ln-types for rust" ]
+  , sourceLanguages   = [LangRust]
+  , sourceGeneration  = Generated
+  , sourceStatus      = Todo
+  }
+
+
+
+-- | https://github.com/adarqui/javascript-ln-types
+--
+source_javascript_ln_types :: Source
+source_javascript_ln_types = (defaultSource "javascript-ln-types") {
+    sourceDescription = [ "ln-types for javascript" ]
+  , sourceLanguages   = [LangJavascript]
+  , sourceGeneration  = Generated
+  , sourceStatus      = Todo
+  }
+
+
+
+-- | https://github.com/adarqui/go-ln-types
+--
+source_go_ln_types :: Source
+source_go_ln_types = (defaultSource "go-ln-types") {
+    sourceDescription = [ "ln-types for go" ]
+  , sourceLanguages   = [LangGo]
+  , sourceGeneration  = Generated
+  , sourceStatus      = Todo
+  }
+
+
+
+-- | https://github.com/adarqui/c-ln-types
+--
+source_c_ln_types :: Source
+source_c_ln_types = (defaultSource "c-ln-types") {
+    sourceDescription = [ "ln-types for c" ]
+  , sourceLanguages   = [LangGo]
+  , sourceGeneration  = Generated
+  , sourceStatus      = Todo
   }
 
 
@@ -260,4 +348,15 @@ source_ln_shell = (defaultSource "ln-shell") {
   , sourceLanguages   = [LangHaskell]
   , sourceStatus      = Deprecated (Just "Experiment. Will re-boot this as ln-ui-shell")
   , sourceType        = Frontend
+  }
+
+
+
+-- | https://github.com/adarqui/haskell-web-bootstrap
+--
+source_haskell_web_bootstrap :: Source
+source_haskell_web_bootstrap = (defaultSource "haskell-web-bootstrap") {
+    sourceDescription = [ "Bootstrap(3) CSS classes for Haskell" ]
+  , sourceStatus      = Complete
+  , sourceType        = FullStack
   }
