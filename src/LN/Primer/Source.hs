@@ -1,6 +1,10 @@
 {-# LANGUAGE DeriveAnyClass #-}
 {-# LANGUAGE DeriveGeneric  #-}
 
+-- | Declares our source types. These types describe a source (repository)
+-- that contributes to the LN project.
+--
+
 module LN.Primer.Source (
     Source (..)
   , SourceStatus (..)
@@ -8,6 +12,10 @@ module LN.Primer.Source (
   , SourceLanguage (..)
   , SourceType (..)
   , SourceGeneration (..)
+  , SourceSpecificity (..)
+  , MaintainerName
+  , MaintainerURL
+  , SourceMaintainer
 ) where
 
 
@@ -21,8 +29,8 @@ import           GHC.Generics  (Generic)
 -- | Is this source still actively apart of the LN project, or has it been deprecated?
 --
 data SourceStatus
-  = StatusActive
-  | StatusDeprecated
+  = Active
+  | Deprecated
   deriving (Eq, Ord, Show, Generic, Typeable)
 
 
@@ -31,8 +39,8 @@ data SourceStatus
 -- There are only a few private sources - which aren't very useful.
 --
 data SourceVisibility
-  = VisibilityPublic
-  | VisibilityPrivate
+  = Public
+  | Private
   deriving (Eq, Ord, Show, Generic, Typeable)
 
 
@@ -53,9 +61,9 @@ data SourceLanguage
 -- | Is this source only useable on the backend, frontend, or both?
 --
 data SourceType
-  = TypeFrontend
-  | TypeBackend
-  | TypeFullStack
+  = Frontend
+  | Backend
+  | FullStack
   deriving (Eq, Ord, Show, Generic, Typeable)
 
 
@@ -64,18 +72,26 @@ data SourceType
 -- Automatic generation occurs via tools such as haskell-interop-prime & ln-interop.
 --
 data SourceGeneration
-  = GenManual
-  | GenAutomated
+  = Manual
+  | Automated
   deriving (Eq, Ord, Show, Generic, Typeable)
 
 
 
 -- | Declares whether this source is Reuseable or Specific to the LN project.
 --
-data SourceSpecificty
+data SourceSpecificity
   = Reuseable
   | Specific
   deriving (Eq, Ord, Show, Generic, Typeable)
+
+
+
+-- | A maintainer
+--
+type MaintainerName   = Text
+type MaintainerURL    = Text
+type SourceMaintainer = (MaintainerName, MaintainerURL)
 
 
 
@@ -83,9 +99,13 @@ data SourceSpecificty
 --
 data Source = Source {
   sourceName        :: Text,
-  sourceDescription :: Text,
-  sourceURL         :: Maybe Text,
+  sourceDescription :: [Text],
+  sourceURL         :: Text,
   sourceLanguages   :: [SourceLanguage],
   sourceStatus      :: SourceStatus,
-  sourceVisibility  :: SourceVisibility
+  sourceVisibility  :: SourceVisibility,
+  sourceType        :: SourceType,
+  sourceGeneration  :: SourceGeneration,
+  sourceSpecificity :: SourceSpecificity,
+  sourceMaintainers :: [SourceMaintainer]
 } deriving (Eq, Ord, Show, Generic, Typeable)
