@@ -8,6 +8,7 @@
 module LN.Primer.Source (
     Source (..)
   , SourceStatus (..)
+  , SourceState (..)
   , DeprecationReason
   , SourceVisibility (..)
   , SourceLanguage (..)
@@ -35,6 +36,16 @@ data SourceStatus
   deriving (Eq, Ord, Show, Generic, Typeable)
 
 type DeprecationReason = Text
+
+
+
+-- | Is this source a work in progress, completely finalized, or a future project?
+--
+data SourceState
+  = WorkInProgress
+  | Complete
+  | Todo
+  deriving (Eq, Ord, Show, Generic, Typeable)
 
 
 
@@ -106,6 +117,7 @@ data Source = Source {
   sourceURL         :: Text,
   sourceLanguages   :: [SourceLanguage],
   sourceStatus      :: SourceStatus,
+  sourceState       :: SourceState,
   sourceVisibility  :: SourceVisibility,
   sourceType        :: SourceType,
   sourceGeneration  :: SourceGeneration,

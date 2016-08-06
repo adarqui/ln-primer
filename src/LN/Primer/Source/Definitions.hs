@@ -54,6 +54,7 @@ defaultSource package = Source {
     , sourceURL         = source_prefix <> "/" <> package
     , sourceLanguages   = []
     , sourceStatus      = Active
+    , sourceState       = WorkInProgress
     , sourceVisibility  = Public
     , sourceType        = Backend
     , sourceGeneration  = Manual
