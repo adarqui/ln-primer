@@ -55,6 +55,8 @@ defaultSource package = Source {
 
 
 
+-- | https://github.com/adarqui/ln-yesod
+--
 source_ln_yesod :: Source
 source_ln_yesod = (defaultSource "ln-yesod") {
     sourceDescription = [ "HTTPS backend using Yesod"
@@ -62,4 +64,16 @@ source_ln_yesod = (defaultSource "ln-yesod") {
                         , "Persist data to PostgreSQL via Persistent."
                         ]
   , sourceLanguages = [LangHaskell]
+}
+
+
+
+-- | https://github.com/adarqui/ln-ui-purescript
+--
+source_ln_ui_purescript :: Source
+source_ln_ui_purescript = (defaultSource "ln-ui-purescript") {
+    sourceDescription = [ "Initial frontend for LN."
+                        , "A purescript-halogen app."
+                        ]
+  , sourceLanguages = [LangPurescript]
 }
