@@ -21,6 +21,7 @@ module LN.Primer.Source.Definitions (
   , source_ln_ui_ghcjs
   , source_ln_ui_reactflux
   , source_ln_ui_purescript
+  , source_ln_shell
 ) where
 
 
@@ -46,6 +47,7 @@ sources =
   , source_ln_ui_ghcjs
   , source_ln_ui_reactflux
   , source_ln_ui_purescript
+  , source_ln_shell
   ]
 
 
@@ -233,5 +235,17 @@ source_ln_ui_purescript = (defaultSource "ln-ui-purescript") {
                         ]
   , sourceLanguages   = [LangPurescript]
   , sourceStatus      = Deprecated (Just "Purescript 0.9.x compiler is too slow.")
+  , sourceType        = Frontend
+  }
+
+
+
+-- | https://github.com/adarqui/ln-ui-shell
+--
+source_ln_shell :: Source
+source_ln_shell = (defaultSource "ln-shell") {
+    sourceDescription = [ "Shell interface" ]
+  , sourceLanguages   = [LangHaskell]
+  , sourceStatus      = Deprecated (Just "Experiment. Will re-boot this as ln-ui-shell")
   , sourceType        = Frontend
   }
