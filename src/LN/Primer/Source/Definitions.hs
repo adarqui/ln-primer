@@ -30,6 +30,7 @@ module LN.Primer.Source.Definitions (
   , source_ln_ui_shell
   , source_ln_shell
   , source_haskell_web_bootstrap
+  , source_haskell_ebyam
 ) where
 
 
@@ -64,6 +65,7 @@ sources =
   , source_ln_ui_shell
   , source_ln_shell
   , source_haskell_web_bootstrap
+  , source_haskell_ebyam
   ]
 
 
@@ -359,4 +361,17 @@ source_haskell_web_bootstrap = (defaultSource "haskell-web-bootstrap") {
     sourceDescription = [ "Bootstrap(3) CSS classes for Haskell" ]
   , sourceStatus      = Complete
   , sourceType        = FullStack
+  , sourceSpecificity = Reuseable
+  }
+
+
+
+-- | https://github.com/adarqui/haskell-ebyam
+--
+source_haskell_ebyam :: Source
+source_haskell_ebyam = (defaultSource "haskell-ebyam") {
+    sourceDescription = [ "Flipped maybe for code readability" ]
+  , sourceStatus      = Complete
+  , sourceType        = FullStack
+  , sourceSpecificity = Reuseable
   }
