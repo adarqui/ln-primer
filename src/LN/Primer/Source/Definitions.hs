@@ -13,6 +13,8 @@ module LN.Primer.Source.Definitions (
   , source_haskell_ln_types
   , source_purescript_ln_types
   , source_ln_yesod
+  , source_ln_ui_core
+  , source_ln_ui_ghcjs
   , source_ln_ui_purescript
 ) where
 
@@ -31,6 +33,8 @@ sources =
   , source_haskell_ln_types
   , source_purescript_ln_types
   , source_ln_yesod
+  , source_ln_ui_core
+  , source_ln_ui_ghcjs
   , source_ln_ui_purescript
   ]
 
@@ -109,6 +113,35 @@ source_ln_yesod = (defaultSource "ln-yesod") {
                         ]
   , sourceLanguages   = [LangHaskell]
   }
+
+
+
+-- | https://github.com/adarqui/ln-ui-core
+--
+source_ln_ui_core :: Source
+source_ln_ui_core = (defaultSource "ln-ui-core") {
+    sourceDescription = [ "Base system for all haskell frontends."
+                        , "The core is supposed to be re-useable by any frontend, allowing us to reduce code in since most of it will be shared."
+                        ]
+
+  , sourceLanguages   = [LangHaskell]
+  }
+
+
+
+-- | https://github.com/adarqui/ln-ui-ghcjs
+--
+source_ln_ui_ghcjs :: Source
+source_ln_ui_ghcjs = (defaultSource "ln-ui-ghcjs") {
+    sourceDescription = [ "This repo simply compiles all of the ghcjs frontends (ie; reactflux) into javascript libraries." ]
+  , sourceLanguages   = [LangHaskell]
+  }
+
+
+
+-- | https://github.com/adarqui/ln-ui-reactflux
+--
+
 
 
 
