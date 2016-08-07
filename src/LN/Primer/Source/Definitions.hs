@@ -9,6 +9,7 @@ module LN.Primer.Source.Definitions (
   , source_prefix
   , source_maintainers
   , defaultSource
+  , source_ln_primer
   , source_ln_types
   , source_haskell_ln_types
   , source_purescript_ln_types
@@ -51,7 +52,8 @@ import           LN.Primer.Source
 
 sources :: [Source]
 sources =
-  [ source_ln_types
+  [ source_ln_primer
+  , source_ln_types
   , source_haskell_ln_types
   , source_purescript_ln_types
   , source_ocaml_ln_types
@@ -108,6 +110,17 @@ defaultSource package = Source {
     , sourceSpecificity = Specific
     , sourceMaintainers = source_maintainers
 }
+
+
+
+-- | https://github.com/adarqui/ln-primer
+--
+source_ln_primer :: Source
+source_ln_primer = (defaultSource "ln-primer") {
+    sourceDescription = [ "Contains information of all repositories & tools to perform actions on them." ]
+  , sourceLanguages   = [LangHaskell]
+  , sourceType        = Backend
+  }
 
 
 
