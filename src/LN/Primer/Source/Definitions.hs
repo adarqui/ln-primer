@@ -28,7 +28,9 @@ module LN.Primer.Source.Definitions (
   , source_ln_ui_reactflux
   , source_ln_ui_purescript
   , source_ln_ui_shell
+  , source_ln_lib
   , source_ln_shell
+  , source_ln_fix
   , source_haskell_web_bootstrap
   , source_haskell_ebyam
   , source_haskell_rehtie
@@ -66,7 +68,9 @@ sources =
   , source_ln_ui_reactflux
   , source_ln_ui_purescript
   , source_ln_ui_shell
+  , source_ln_lib
   , source_ln_shell
+  , source_ln_fix
   , source_haskell_web_bootstrap
   , source_haskell_ebyam
   , source_haskell_rehtie
@@ -348,6 +352,16 @@ source_ln_ui_purescript = (defaultSource "ln-ui-purescript") {
 
 
 
+-- | https://github.com/adarqui/ln-lib
+--
+source_ln_lib :: Source
+source_ln_lib = (defaultSource "ln-lib") {
+    sourceDescription = [ "Misc reuseable functions that don't fit in any other library." ]
+  , sourceType        = FullStack
+  }
+
+
+
 -- | https://github.com/adarqui/ln-ui-shell
 --
 source_ln_shell :: Source
@@ -356,6 +370,17 @@ source_ln_shell = (defaultSource "ln-shell") {
   , sourceLanguages   = [LangHaskell]
   , sourceStatus      = Deprecated (Just "Experiment. Will re-boot this as ln-ui-shell")
   , sourceType        = Frontend
+  }
+
+
+
+-- | https://github.com/adarqui/ln-fix
+--
+source_ln_fix :: Source
+source_ln_fix = (defaultSource "ln-fix") {
+    sourceDescription = [ "Misc stuff to fix the database etc" ]
+  , sourceLanguages   = [LangHaskell]
+  , sourceType        = Backend
   }
 
 
