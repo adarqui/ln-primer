@@ -28,6 +28,7 @@ module LN.Primer.Source.Definitions (
   , source_ln_ui_reactflux
   , source_ln_ui_purescript
   , source_ln_ui_shell
+  , source_ln_sanitize
   , source_ln_lib
   , source_ln_shell
   , source_ln_fix
@@ -68,6 +69,7 @@ sources =
   , source_ln_ui_reactflux
   , source_ln_ui_purescript
   , source_ln_ui_shell
+  , source_ln_sanitize
   , source_ln_lib
   , source_ln_shell
   , source_ln_fix
@@ -348,6 +350,16 @@ source_ln_ui_purescript = (defaultSource "ln-ui-purescript") {
   , sourceLanguages   = [LangPurescript]
   , sourceStatus      = Deprecated (Just "Purescript 0.9.x compiler is too slow.")
   , sourceType        = Frontend
+  }
+
+
+
+-- | https://github.com/adarqui/ln-sanitize
+--
+source_ln_sanitize :: Source
+source_ln_sanitize = (defaultSource "ln-sanitize") {
+    sourceDescription = [ "Sanitization routines for inputs & outputs" ]
+  , sourceType = FullStack
   }
 
 
