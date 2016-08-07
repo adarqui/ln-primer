@@ -35,14 +35,26 @@ module LN.Primer.Source.Definitions (
   , source_ln_sanitize
   , source_ln_validate
   , source_ln_lib
+  , source_ln_smf_migration
   , source_ln_shell
   , source_ln_fix
+  , source_ln_style_guide
+  , source_ln_interop
+  , source_haskell_interop_prime
   , source_haskell_web_bootstrap
   , source_haskell_ebyam
   , source_haskell_rehtie
   , source_haskell_ifte
   , source_haskell_either_helpers
   , source_haskell_bbcode_parser
+  , source_haskell_api_helpers_shared
+  , source_haskell_api_helpers
+  , source_haskell_api_helpers_ghcjs
+  , source_purescript_api_helpers
+  , source_purescript_date_helpers
+  , source_purescript_ebyam
+  , source_purescript_rehtie
+  , source_purescript_ifte
 ) where
 
 
@@ -82,14 +94,26 @@ sources =
   , source_ln_sanitize
   , source_ln_validate
   , source_ln_lib
+  , source_ln_smf_migration
   , source_ln_shell
   , source_ln_fix
+  , source_ln_style_guide
+  , source_ln_interop
+  , source_haskell_interop_prime
   , source_haskell_web_bootstrap
   , source_haskell_ebyam
   , source_haskell_rehtie
   , source_haskell_ifte
   , source_haskell_either_helpers
   , source_haskell_bbcode_parser
+  , source_haskell_api_helpers_shared
+  , source_haskell_api_helpers
+  , source_haskell_api_helpers_ghcjs
+  , source_purescript_api_helpers
+  , source_purescript_date_helpers
+  , source_purescript_ebyam
+  , source_purescript_rehtie
+  , source_purescript_ifte
   ]
 
 
@@ -429,6 +453,13 @@ source_ln_lib = (defaultSource "ln-lib") {
 
 
 
+-- | https://github.com/adarqui/ln-smf-migration
+--
+source_ln_smf_migration :: Source
+source_ln_smf_migration = undefined
+
+
+
 -- | https://github.com/adarqui/ln-ui-shell
 --
 source_ln_shell :: Source
@@ -449,6 +480,27 @@ source_ln_fix = (defaultSource "ln-fix") {
   , sourceLanguages   = [LangHaskell]
   , sourceType        = Backend
   }
+
+
+
+-- | https://github.com/adarqui/ln-style-guide
+--
+source_ln_style_guide :: Source
+source_ln_style_guide = undefined
+
+
+
+-- | https://github.com/adarqui/ln-interop
+--
+source_ln_interop :: Source
+source_ln_interop = undefined
+
+
+
+-- | https://github.com/adarqui/haskell-interop-prime
+--
+source_haskell_interop_prime :: Source
+source_haskell_interop_prime = undefined
 
 
 
@@ -516,3 +568,59 @@ source_haskell_either_helpers = (defaultSource "haskell-either-helpers") {
 --
 source_haskell_bbcode_parser :: Source
 source_haskell_bbcode_parser = undefined
+
+
+
+-- | https://github.com/adarqui/haskell-api-helpers-shared
+--
+source_haskell_api_helpers_shared :: Source
+source_haskell_api_helpers_shared = undefined
+
+
+
+-- | https://github.com/adarqui/haskell-api-helpers
+--
+source_haskell_api_helpers :: Source
+source_haskell_api_helpers = undefined
+
+
+
+-- | https://github.com/adarqui/haskell-api-helpers-ghcjs
+--
+source_haskell_api_helpers_ghcjs :: Source
+source_haskell_api_helpers_ghcjs = undefined
+
+
+
+-- | https://github.com/adarqui/purescript-api-helpers
+--
+source_purescript_api_helpers :: Source
+source_purescript_api_helpers = undefined
+
+
+
+-- | https://github.com/adarqui/purescript-date-helprs
+--
+source_purescript_date_helpers :: Source
+source_purescript_date_helpers = undefined
+
+
+
+-- | https://github.com/adarqui/purescript-ebyam
+--
+source_purescript_ebyam :: Source
+source_purescript_ebyam = undefined
+
+
+
+-- | https://github.com/adarqui/purescript-rehtie
+--
+source_purescript_rehtie :: Source
+source_purescript_rehtie = undefined
+
+
+
+-- | https://github.com/adarqui/purescript-ifte
+--
+source_purescript_ifte :: Source
+source_purescript_ifte = undefined
