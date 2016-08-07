@@ -29,6 +29,7 @@ module LN.Primer.Source.Definitions (
   , source_ln_ui_purescript
   , source_ln_ui_shell
   , source_ln_sanitize
+  , source_ln_validate
   , source_ln_lib
   , source_ln_shell
   , source_ln_fix
@@ -70,6 +71,7 @@ sources =
   , source_ln_ui_purescript
   , source_ln_ui_shell
   , source_ln_sanitize
+  , source_ln_validate
   , source_ln_lib
   , source_ln_shell
   , source_ln_fix
@@ -359,7 +361,17 @@ source_ln_ui_purescript = (defaultSource "ln-ui-purescript") {
 source_ln_sanitize :: Source
 source_ln_sanitize = (defaultSource "ln-sanitize") {
     sourceDescription = [ "Sanitization routines for inputs & outputs" ]
-  , sourceType = FullStack
+  , sourceType        = FullStack
+  }
+
+
+
+-- | https://github.com/adarqui/ln-validate
+--
+source_ln_validate :: Source
+source_ln_validate = (defaultSource "ln-validate") {
+    sourceDescription = [ "Validation routines for inputs" ]
+  , sourceType        = FullStack
   }
 
 
