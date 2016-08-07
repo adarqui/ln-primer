@@ -28,6 +28,9 @@ module LN.Primer.Source.Definitions (
   , source_ln_ui_ghcjs
   , source_ln_ui_reactflux
   , source_ln_ui_purescript
+  , source_ln_api
+  , source_ln_api_ghcjs
+  , source_ln_api_runner
   , source_ln_ui_shell
   , source_ln_sanitize
   , source_ln_validate
@@ -39,6 +42,7 @@ module LN.Primer.Source.Definitions (
   , source_haskell_rehtie
   , source_haskell_ifte
   , source_haskell_either_helpers
+  , source_haskell_bbcode_parser
 ) where
 
 
@@ -71,6 +75,9 @@ sources =
   , source_ln_ui_ghcjs
   , source_ln_ui_reactflux
   , source_ln_ui_purescript
+  , source_ln_api
+  , source_ln_api_ghcjs
+  , source_ln_api_runner
   , source_ln_ui_shell
   , source_ln_sanitize
   , source_ln_validate
@@ -82,6 +89,7 @@ sources =
   , source_haskell_rehtie
   , source_haskell_ifte
   , source_haskell_either_helpers
+  , source_haskell_bbcode_parser
   ]
 
 
@@ -369,6 +377,28 @@ source_ln_ui_purescript = (defaultSource "ln-ui-purescript") {
 
 
 
+-- | https://github.com/adarqui/ln-api
+--
+source_ln_api :: Source
+source_ln_api = undefined
+
+
+
+-- | https://github.com/adarqui/ln-api-ghcjs
+--
+source_ln_api_ghcjs :: Source
+source_ln_api_ghcjs = undefined
+
+
+
+
+-- | https://github.com/adarqui/ln-api-runner
+--
+source_ln_api_runner :: Source
+source_ln_api_runner = undefined
+
+
+
 -- | https://github.com/adarqui/ln-sanitize
 --
 source_ln_sanitize :: Source
@@ -479,3 +509,10 @@ source_haskell_either_helpers = (defaultSource "haskell-either-helpers") {
   , sourceType        = FullStack
   , sourceSpecificity = Reuseable
   }
+
+
+
+-- | https://github.com/adarqui/haskell-bbcode-parser
+--
+source_haskell_bbcode_parser :: Source
+source_haskell_bbcode_parser = undefined
