@@ -40,6 +40,7 @@ module LN.Primer.Source.Definitions (
   , source_ln_fix
   , source_ln_style_guide
   , source_ln_interop
+  , source_ln_nix
   , source_haskell_interop_prime
   , source_haskell_web_bootstrap
   , source_haskell_ebyam
@@ -99,6 +100,7 @@ sources =
   , source_ln_fix
   , source_ln_style_guide
   , source_ln_interop
+  , source_ln_nix
   , source_haskell_interop_prime
   , source_haskell_web_bootstrap
   , source_haskell_ebyam
@@ -494,6 +496,13 @@ source_ln_style_guide = undefined
 --
 source_ln_interop :: Source
 source_ln_interop = undefined
+
+
+
+-- | https://github.com/adarqui/ln-nix
+--
+source_ln_nix :: Source
+source_ln_nix = undefined
 
 
 
