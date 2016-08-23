@@ -48,6 +48,7 @@ module LN.Primer.Source.Definitions (
   , source_haskell_ifte
   , source_haskell_either_helpers
   , source_haskell_bbcode_parser
+  , source_haskell_bbcode_parser_reactflux
   , source_haskell_api_helpers_shared
   , source_haskell_api_helpers
   , source_haskell_api_helpers_ghcjs
@@ -108,6 +109,7 @@ sources =
   , source_haskell_ifte
   , source_haskell_either_helpers
   , source_haskell_bbcode_parser
+  , source_haskell_bbcode_parser_reactflux
   , source_haskell_api_helpers_shared
   , source_haskell_api_helpers
   , source_haskell_api_helpers_ghcjs
@@ -577,6 +579,13 @@ source_haskell_either_helpers = (defaultSource "haskell-either-helpers") {
 --
 source_haskell_bbcode_parser :: Source
 source_haskell_bbcode_parser = undefined
+
+
+
+-- | https://github.com/adarqui/haskell-bbcode-parser_reactflux
+--
+source_haskell_bbcode_parser_reactflux :: Source
+source_haskell_bbcode_parser_reactflux = undefined
 
 
 
