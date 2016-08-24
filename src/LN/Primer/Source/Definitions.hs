@@ -50,6 +50,7 @@ module LN.Primer.Source.Definitions (
   , source_haskell_bbcode_parser
   , source_haskell_bbcode_parser_reactflux
   , source_haskell_media_embed
+  , source_haskell_media_embed_reactflux
   , source_haskell_api_helpers_shared
   , source_haskell_api_helpers
   , source_haskell_api_helpers_ghcjs
@@ -112,6 +113,7 @@ sources =
   , source_haskell_bbcode_parser
   , source_haskell_bbcode_parser_reactflux
   , source_haskell_media_embed
+  , source_haskell_media_embed_reactflux
   , source_haskell_api_helpers_shared
   , source_haskell_api_helpers
   , source_haskell_api_helpers_ghcjs
@@ -584,17 +586,24 @@ source_haskell_bbcode_parser = undefined
 
 
 
--- | https://github.com/adarqui/haskell-bbcode-parser_reactflux
+-- | https://github.com/adarqui/haskell-bbcode-parser-reactflux
 --
 source_haskell_bbcode_parser_reactflux :: Source
 source_haskell_bbcode_parser_reactflux = undefined
 
 
 
--- | https://github.com/adarqui/haskell-bbcode-parser_reactflux
+-- | https://github.com/adarqui/haskell-media-embed
 --
 source_haskell_media_embed :: Source
 source_haskell_media_embed = undefined
+
+
+
+-- | https://github.com/adarqui/haskell-media-embed-reactflux
+--
+source_haskell_media_embed_reactflux :: Source
+source_haskell_media_embed_reactflux = undefined
 
 
 
